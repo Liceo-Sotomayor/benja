@@ -1,16 +1,24 @@
 #include <iostream>
 #include <string>
+#include <stdlib.h>
+#include <time.h>
 using namespace std;
-
 int main() {
-    bool esMayor;
-    int a, b;
-    cout << " ingrese un numero " << endl;
-    cin >> a;
-    cout << " ingrese otro numero " << endl;
-    cin >> b;
-    esMayor = a > b;
-    if (esMayor){
-    cout << " el numero " << a << " es mayor que " << b << endl;   
+    srand (time(NULL));
+    int arma, escudo, danio;
+    arma = rand()%6+1;
+    arma += rand()%6+1;
+    arma += 3;
+
+    escudo = rand()%4+1;
+    escudo += rand()%4+1;
+    escudo += 1;
+
+    danio = arma - escudo;
+  
+    if (danio > 0) {
+        cout << " el daño es " << danio << endl;
+    } else {
+        cout << " no sufrio daño "  << endl;
     }
 }
